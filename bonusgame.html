@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Ink and Memory</title>
+  <link rel="stylesheet" href="bonusgame.css">
+  <link rel="icon" type="image/png" href="images/favicon.png"/>
+</head>
+
+<body>
+  <h1 class = "center">Ink and Memory</h1>
+  <h2 class = "center" id = "score"></h2>
+  <h2 class = "center" id = "time"></h2>
+  <button class="button" id = "start" onclick="startTimer(difficultyLevel)"><b>Start Timer</b></button>
+
+  <section class="memory-game-boundary">
+    <div class="playing-card" data-framework="irlrobot">
+      <img class="picture-face" src="images/finalrobot.jpg" alt="Final IRL Robot" />
+      <img class="logo-face" id = "rotateimage" src="images/iamlogov2.png" alt="Ink and Metal Logo" />
+    </div>
+    <div class="playing-card" data-framework="irlrobot">
+      <img class="picture-face" src="images/finalrobot.jpg" alt="Final IRL Robot" />
+      <img class="logo-face" id = "rotateimage" src="images/iamlogov2.png" alt="Ink and Metal Logo" />
+    </div>
+
+    <div class="playing-card" data-framework="intake">
+      <img class="picture-face " src="images/intakev1.png" alt="IntakeV1" />
+      <img class="logo-face" id = "rotateimage" src="images/iamlogov2.png" alt="Ink and Metal Logo" />
+    </div>
+    <div class="playing-card" data-framework="intake">
+      <img class="picture-face" src="images/intakev1.png" alt="IntakeV1" />
+      <img class="logo-face" id = "rotateimage" src="images/iamlogov2.png" alt="Ink and Metal Logo" />
+    </div>
+
+    <div class="playing-card" data-framework="robotrender">
+      <img class="picture-face" src="images/finalrobotrender.png" alt="Final Robot Render" />
+      <img class="logo-face" id = "rotateimage" src="images/iamlogov2.png" alt="Ink and Metal Logo" />
+    </div>
+    <div class="playing-card" data-framework="robotrender">
+      <img class="picture-face" src="images/finalrobotrender.png" alt="Final Robot Render" />
+      <img class="logo-face" id = "rotateimage" src="images/iamlogov2.png" alt="Ink and Metal Logo" />
+    </div>
+
+    <div class="playing-card" data-framework="outtake">
+      <img class="picture-face" src="images/outtakev1.png" alt="OuttakeV1" />
+      <img class="logo-face" id = "rotateimage" src="images/iamlogov2.png" alt="Ink and Metal Logo" />
+    </div>
+    <div class="playing-card" data-framework="outtake">
+      <img class="picture-face" src="images/outtakev1.png" alt="OuttakeV1" />
+      <img class="logo-face" id = "rotateimage" src="images/iamlogov2.png" alt="Ink and Metal Logo" />
+    </div>
+
+  <script src="bonusgame.js"></script>
+</body>
+</html>

@@ -4,41 +4,31 @@ let firstCardFlipped;
 let secondCardFlipped;
 let matched = 0;
 let flipped = 0;
-let startingScore = 1600;
-let time = 0;
+let time = 23;
 let difficultyLevel = 0;
+let secondChance1600 = true;
 
 const playingCards = document.querySelectorAll('.playing-card');
 
-document.getElementById("score").innerHTML = "Score: " + startingScore.toString()
 document.getElementById("time").innerHTML = "Time: " + time.toString()
 
-function startTimer(time) {
-  if (time == 81) {
-    document.getElementById("easy").style.backgroundColor = "#B99FEB"
-  }
-  if (time == 61) {
-    document.getElementById("medium").style.backgroundColor = "#B99FEB"
-  }
-  if (time == 41) {
-    document.getElementById("hard").style.backgroundColor = "#B99FEB"
-  }
+function startTimer() {
+  alert("You can only get one match wrong, so there is some luck involved! You have 23 seconds!")
   setInterval(function() { 
   time = time - 1;
   if (time == -1) {
-    var answer = confirm("Time's up! Want to try again? You correctly flipped " + matched + " of the 8 pairs.")
+    var answer = confirm("Time's up! Want to go back to the original game?")
     if (answer){
-      alert("Good luck! Try to finish in time!")
-      location.reload()
+      alert("Good luck! Try getting a 1600 on the first time itself!")
+      location.replace("index.html");
     }
     else {
       alert("Thanks for playing! See you later!")
-      window.close()
+      location.close()
     }
   }
   document.getElementById("time").innerHTML = "Time: " + (time).toString();}, 1000);
 }
-
 
 function flipCard() {
   if (boardNotClickable) 
@@ -73,44 +63,31 @@ function checkIfCardsMatch() {
     flipped--;
   }
 
-  if (flipped > 4 && !cardsMatch) {
-    startingScore = startingScore - 10;
-    document.getElementById("score").innerHTML = "Score: " + startingScore.toString()
-  }
-
-  if (matched == 8) {
-    if (startingScore < 1550) {
-        var answer = confirm("Want to play again?")
-        if (answer) {
-            alert("Good luck! Try to beat your score of " + startingScore + "!")
-            location.reload()
-        }
-        else {
-            alert("Thanks for playing! See you later!")
-            window.close()
-        }
-    }
-    else if (startingScore >= 1550 && startingScore <= 1590) {
-      var answer = confirm("Want to play a bonus round to have a chance at 1600?")
-      if (answer) {
-        location.replace("bonusgame.html");
-      }
-      else {
-        alert("Thanks for playing! See you later!")
-        window.close()
-      }
+  if (flipped > 2 && !cardsMatch) {
+    secondChance1600 = false;
+    var answer = confirm("You've failed to get the 1600 on the second attempt since you got more than 1 match wrong! Want to go back to the original game?")
+    if (answer){
+      alert("Good luck! Try getting a 1600 on the first time itself!")
+      location.replace("index.html");
     }
     else {
-      var answer = confirm("Perfect Score! Do you want to try to match it again?")
-      if (answer) {
-        alert("Good luck! Let's see if you can get another 1600!")
-        location.reload()
-      }
-      else {
-        alert("You've proved your excellent memory! Thanks for playing, and see you later!")
-        window.close()
-      }
+      alert("Thanks for playing! See you later!")
+      location.close()
     }
+    return;
+  }
+
+  if (matched == 4) {
+    var answer = confirm("Your score is upgraded to a 1600! Want to play again?")
+    if (answer) {
+      alert("Good luck! Try getting a 1600 the first time itself!")
+      location.replace("index.html")
+    }
+    else {
+      alert("Thanks for playing! See you later!")
+      location.close()
+    }
+
   }
 }
 
@@ -139,7 +116,7 @@ function resetForNextTurn() {
 
 (function shuffleAllCards() {
   playingCards.forEach(playingCard => {
-    let randomPosition = Math.floor(Math.random() * 16);
+    let randomPosition = Math.floor(Math.random() * 8);
     playingCard.style.order = randomPosition;
   });
 })();
