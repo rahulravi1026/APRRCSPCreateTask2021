@@ -17,49 +17,14 @@ function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-// function startTimer(time) {
-//   if (time == 81) {
-//     document.getElementById("easy").style.backgroundColor = "#B99FEB"
-//   }
-//   if (time == 61) {
-//     document.getElementById("medium").style.backgroundColor = "#B99FEB"
-//   }
-//   if (time == 11) {
-//     document.getElementById("hard").style.backgroundColor = "#B99FEB"
-//   }
-//   setInterval(function() { 
-//   time = time - 1;
-//   // if (time == 5) {
-//   //   var i;
-//   //   for(i = 5; i >= 0; i++) {
-
-//   //     document.body.style.backgroundColor = "black";
-//   //   }
-//   // }
-//   if (time < 0) {
-//     var answer = confirm("Time's up! Want to try again? You correctly flipped " + matched + " of the 8 pairs.")
-//     if (answer){
-//       alert("Good luck! Try to finish in time!")
-//       location.reload()
-//     }
-//     else {
-//       alert("Thanks for playing! See you later!")
-//       window.close()
-//     }
-//   }
-//   document.getElementById("time").innerHTML = "Time: " + (time).toString();}, 1000);
-// }
-
-
-
 function startTimerSecond(time) {
   if (time == 81) {
     document.getElementById("easy").style.backgroundColor = "#B99FEB"
   }
-  if (time == 61) {
+  else if (time == 61) {
     document.getElementById("medium").style.backgroundColor = "#B99FEB"
   }
-  if (time == 41) {
+  else if (time == 41) {
     document.getElementById("hard").style.backgroundColor = "#B99FEB"
   }
   setInterval(function() { 
