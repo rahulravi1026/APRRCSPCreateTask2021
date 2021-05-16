@@ -22,7 +22,7 @@ function startTimerSecond(time) {
     playingCard.classList.add('flip');
   });
 
-  sleep(1000).then(() => { 
+  sleep(500).then(() => { 
     playingCards.forEach(playingCard => {
       playingCard.classList.remove('flip');
     });
