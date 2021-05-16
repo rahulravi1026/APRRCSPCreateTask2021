@@ -42,7 +42,7 @@ function startTimer(time) {
   time = time - 1;
   if (time < 11 && time >= 0) {
      var i;
-     for(i = 5; i >= 0; i--) {
+     for(i = 10; i >= 0; i--) {
        document.body.style.backgroundColor = "#AE1F00";
        sleep(500).then(() => {  document.body.style.backgroundColor = "black"; });
     }
