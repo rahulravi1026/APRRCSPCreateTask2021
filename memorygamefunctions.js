@@ -17,7 +17,7 @@ function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-function startTimerSecond(time) {
+function startTimer(time) {
   playingCards.forEach(playingCard => {
     playingCard.classList.add('flip');
   });
