@@ -39,7 +39,6 @@ function startTimer(time) {
     document.getElementById("hard").style.backgroundColor = "#B99FEB"
   }
   setInterval(function() { 
-  console.log(time);
   time = time - 1;
   if (time < 11 && time >= 0) {
      var i;
