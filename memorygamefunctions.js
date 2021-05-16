@@ -6,7 +6,7 @@ let matched = 0;
 let flipped = 0;
 let startingScore = 1600;
 let time = 0;
-let difficultyLevel = 0;
+let difficultyClicked = false;
 
 const playingCards = document.querySelectorAll('.playing-card');
 
@@ -18,6 +18,7 @@ function sleep(ms) {
 }
 
 function startTimerSecond(time) {
+  difficultyClicked = true;
   if (time == 81) {
     document.getElementById("easy").style.backgroundColor = "#B99FEB"
   }
@@ -47,6 +48,9 @@ function startTimerSecond(time) {
 }
 
 function flipCard() {
+  if (difficultyClicked == false) {
+    return;
+  }
   if (boardNotClickable) 
     return;
   if (this === firstCardFlipped) 
