@@ -18,6 +18,16 @@ function sleep(ms) {
 }
 
 function startTimerSecond(time) {
+  playingCards.forEach(playingCard => {
+    playingCard.classList.add('flip');
+  });
+
+  sleep(1000).then(() => { 
+    playingCards.forEach(playingCard => {
+      playingCard.classList.remove('flip');
+    });
+  });
+
   difficultyClicked = true;
   if (time == 81) {
     document.getElementById("easy").style.backgroundColor = "#B99FEB"
