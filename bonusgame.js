@@ -12,7 +12,7 @@ const playingCards = document.querySelectorAll('.playing-card'); //list represen
 document.getElementById("time").innerHTML = "Time: " + time.toString()
 
 function startTimer() {
-  alert("You can only get two match wrong, so there is a bit of luck involved! You have 23 seconds, and good luck!")
+  alert("You can only get two matches wrong, so there is a bit of luck involved! You have 23 seconds, and good luck!")
   setInterval(function() { 
   time = time - 1;
   if (time == -1) {
