@@ -13,8 +13,8 @@ const playingCards = document.querySelectorAll('.playing-card'); //list represen
 document.getElementById("score").innerHTML = "Score: " + startingScore.toString()
 document.getElementById("time").innerHTML = "Time: " + time.toString()
 
-function sleep(ms) { //sleep function that allows a delay of a certain number of milliseconds in the program
-  return new Promise(resolve => setTimeout(resolve, ms));
+function sleep(milliseconds) { //sleep function that allows a delay of a certain number of milliseconds in the program
+  return new Promise(resolve => setTimeout(resolve, milliseconds));
 }
 
 function startTimer(time) { //main purpose is to start a timer counting down from a certain number of seconds
