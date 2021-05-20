@@ -109,7 +109,7 @@ function checkIfCardsMatch() {
             window.close()
         }
     }
-    else if (startingScore >= 1550 && startingScore <= 1590) { //if the final calculated score is between tahn 1550 and 1590, inclusive, give the user an opportunity to play a bonus round to upgrade their score or leave the game
+    else if (startingScore >= 1550 && startingScore <= 1590) { //if the final calculated score is between 1550 and 1590, inclusive, give the user an opportunity to play a bonus round to upgrade their score or leave the game
       var answer = confirm("Want to play a bonus round to have a chance at 1600?")
       if (answer) {
         location.replace("bonusgame.html");
